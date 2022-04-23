@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
     <script>
       //
       // TODO: Implement this function.
       //
-      const makeInputVerifier = () => {
-        return () => {}
-      }
+      const IN_RANGE_RESULT = "Input is in range";
+      const LESS_THAN_MIN = "Input is less than minimum value";
+      const MORE_THAN_MAX = "Input is more than maximum value";
+      const ERROR = "ERROR";
+
+      const makeInputVerifier = (minimum, maximum) => {
+        return (inputValue) => {
+          return minimum > maximum
+            ? ERROR
+            : minimum > inputValue
+            ? LESS_THAN_MIN
+            : minimum <= inputValue && inputValue <= maximum
+            ? IN_RANGE_RESULT
+            : MORE_THAN_MAX;
+        };
+      };
     </script>
   </head>
 
@@ -17,20 +33,43 @@
     <section class="section">
       <div class="box">
         <h1 class="title">Verify Input Value</h1>
-        <p>Open this file and implement the function <code>makeInputVerifier()</code>.</p>
+        <p>
+          Open this file and implement the function
+          <code>makeInputVerifier()</code>.
+        </p>
       </div>
 
       <h3 class="title is-4">Task</h3>
       <div class="content">
         <p>Implement the function <code>makeInputVerifier</code> such that:</p>
         <ul>
-          <li>It takes 2 integer arguments, <code>minimum</code> and <code>maximum</code>.</li>
-          <li>It returns a new function (let’s call it <code>verify</code>).</li>
-          <li>The function <code>verify</code> takes a single integer argument, <code>inputValue</code>, and returns:</li>
+          <li>
+            It takes 2 integer arguments, <code>minimum</code> and
+            <code>maximum</code>.
+          </li>
+          <li>
+            It returns a new function (let’s call it <code>verify</code>).
+          </li>
+          <li>
+            The function <code>verify</code> takes a single integer argument,
+            <code>inputValue</code>, and returns:
+          </li>
           <ul>
-            <li>If <code>inputValue</code> is less than <code>minimum</code>, it returns "Input is less than minimum value".</li>
-            <li>If <code>inputValue</code> is greater than or equal to <code>minimum</code> and less than or equal to <code>maximum</code>, it returns "Input is in range".</li>
-            <li>If <code>inputValue</code> is greater than <code>maximum</code>, it returns "Input is more than maximum value".</li>
+            <li>
+              If <code>inputValue</code> is less than <code>minimum</code>, it
+              returns "Input is less than minimum value".
+            </li>
+            <li>
+              If <code>inputValue</code> is greater than or equal to <code
+                >minimum</code
+              >
+              and less than or equal to <code>maximum</code>, it returns "Input
+              is in range".
+            </li>
+            <li>
+              If <code>inputValue</code> is greater than <code>maximum</code>,
+              it returns "Input is more than maximum value".
+            </li>
           </ul>
         </ul>
         <p>Constraints that your code should check:</p>
@@ -103,26 +142,30 @@
     </section>
 
     <script>
-      Array.prototype.forEach.call(document.getElementsByClassName("test-row"), row => {
-        const minimum = parseInt(row.children[1].innerText)
-        const maximum = parseInt(row.children[2].innerText)
-        const input = parseInt(row.children[3].innerText)
-        const expectedOutput = row.children[4].innerText
+      Array.prototype.forEach.call(
+        document.getElementsByClassName("test-row"),
+        (row) => {
+          const minimum = parseInt(row.children[1].innerText);
+          const maximum = parseInt(row.children[2].innerText);
+          const input = parseInt(row.children[3].innerText);
+          const expectedOutput = row.children[4].innerText;
 
-        const verify = makeInputVerifier(minimum, maximum)
+          const verify = makeInputVerifier(minimum, maximum);
 
-        const actualOutput = typeof verify === "function" ? verify(input) : verify
-        row.children[5].innerText = actualOutput
+          const actualOutput =
+            typeof verify === "function" ? verify(input) : verify;
+          row.children[5].innerText = actualOutput;
 
-        if (expectedOutput === actualOutput) {
-          row.children[6].innerText = "RIGHT"
-          row.children[6].style.color = "green"
-          row.children[6].style.fontWeight = "600"
-        } else {
-          row.children[6].innerText = "WRONG"
-          row.children[6].style.backgroundColor = "red"
+          if (expectedOutput === actualOutput) {
+            row.children[6].innerText = "RIGHT";
+            row.children[6].style.color = "green";
+            row.children[6].style.fontWeight = "600";
+          } else {
+            row.children[6].innerText = "WRONG";
+            row.children[6].style.backgroundColor = "red";
+          }
         }
-      })
+      );
     </script>
   </body>
 </html>
