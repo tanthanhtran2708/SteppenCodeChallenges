@@ -2,6 +2,84 @@
 
 Our code challenges for developers considering joining the team, so we understand better where you are in skill level.
 
+## Overal solutions & Comments
+
+| Problems                | Checklist |
+|-------------------------|-----------|
+| average-order-value     | ✅         |
+| good-binary-strings     | ✅         |
+| item-list-with-features | ✅         |
+| movie-titles-list       | ✅         |
+| top-customers           | ✅         |
+| transform-object        | ✅         |
+| two-pane-list           | ✅         |
+| verify-input-value      | ✅         |
+
+### 1. GOOD BINARY STRINGS
+**How to run** </br>
+Run command
+```
+node solution.js
+```
+**Comments** The idea is related to this post https://www.tutorialspoint.com/special-binary-string-in-cplusplus. I have read the solution and figured out how to make it with Javascript. Because we're recursively creating the combination of our binaryString, then this solution will take bigger time complexity when we deal with ones having large values.
+
+### 2. AVERAGE ORDER VALUE
+I ran the test data and solution on https://sqliteonline.com/. Here is the result
+
+![average-order-value](https://user-images.githubusercontent.com/39640365/164884465-078e11d4-2ec1-4576-a147-00a0feabf579.png)
+
+### 3. TOP CUSTOMERS
+I ran the test data and solution on https://sqliteonline.com/. Here is the result
+
+![top-customers](https://user-images.githubusercontent.com/39640365/164884472-0d0d17fb-a2e9-4f30-9bcd-08f42d39a097.png)
+
+### 4. MOVIES TITLE LIST
+I successfully fetched the data from the given URL.
+However, there's some problem with the `expectedOutput` having the unused spaces that could not match with my actual output even the order is correct.
+
+![movie-titles-list](https://user-images.githubusercontent.com/39640365/164884527-2f52dff4-6008-4840-a457-8a105824be0f.png)
+
+### 5. ITEM LIST WITH FEATURES
+
+**Comments** I added the `font-awesome` icon and change a little bit from the first expected design by moving the text field to the top.
+
+| Requirements                                                                                                               | Checklist |
+|----------------------------------------------------------------------------------------------------------------------------|-----------|
+| Start the list empty.                                                     | ✅         |
+| The last item in the list is a text field where you can enter free text.                                      | ✅         |
+| When the text field is submitted (either with a button or by pressing enter), the text in the field is added to the list as a new item.                                                       | ✅         |
+| Display each of the items as a separate paragraph when added. | ✅         |
+| When you hover over a list item, two buttons appear to the left of it - a delete button and an edit button.                                         | ✅         |
+| Pressing the delete button asks for confirmation and then removes the item from the list.      | ✅         |
+| Pressing the edit button turns the list item back into a text field, and when that field is submitted (either with a button or by pressing enter) it updates the list item                                                                                | ✅         |
+| -                                                                                                                      | -        |
+
+https://user-images.githubusercontent.com/39640365/164885750-a834cce5-cdf3-4f3d-bff4-0b441eefe1f9.mov
+
+https://user-images.githubusercontent.com/39640365/164885754-741ac7f5-d752-4318-bf1e-bc24709b8d83.mov
+
+### 6. TRANSFORM OBJECT
+
+![transform-object](https://user-images.githubusercontent.com/39640365/164885233-9b8cb36d-e7ec-482c-9ec9-0936aa63524e.png)
+
+### 7. TWO PANE LIST
+
+| Requirements                                                                                                                         | Checklist |
+|--------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| The left pane contains a list of all the titles.                                                                                     | ✅         |
+| When a title is clicked on, it displays the content in the right-hand pane, with each string in the content as a separate paragraph. | ✅         |
+| Before anything is clicked the right-hand pane should have an empty state which tells people to click on a title.                    | ✅         |
+
+
+
+https://user-images.githubusercontent.com/39640365/164885336-34fdaf40-23e9-47f4-b17d-dfd79939ecb6.mov
+
+
+### 8. VERIFY INPUT VALUE
+
+![verify-input-value](https://user-images.githubusercontent.com/39640365/164885327-ffea7ee0-8113-4e6a-a7be-f78760700311.png)
+
+
 ## Overall Guidelines
 
 - These tasks aim to give us an indication of what you can and can’t do.
